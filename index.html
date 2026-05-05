@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home Therapist Cooling, Heating, and Plumbing — Tampa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#0a0e18;color:#eef6ff;line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+@keyframes gradBG{0%,100%{background-position:0% 60%}50%{background-position:100% 40%}}
+@keyframes blobMorph{0%,100%{transform:translate(0,0) scale(1) rotate(0deg)}20%{transform:translate(24px,-32px) scale(1.1) rotate(6deg)}50%{transform:translate(-16px,20px) scale(.9) rotate(-4deg)}75%{transform:translate(20px,10px) scale(1.06) rotate(3deg)}}
+@keyframes ctaPulse{0%,100%{box-shadow:0 0 0 0 rgba(96,165,250,.6),0 8px 32px rgba(96,165,250,.3)}60%{box-shadow:0 0 0 22px rgba(96,165,250,0),0 8px 32px rgba(96,165,250,.3)}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-25%)}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.animate{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.animate.visible{opacity:1;transform:none}
+.grad-text{background:linear-gradient(90deg,#60a5fa 0%,#fff 40%,#60a5facc 60%,#60a5fa 100%);background-size:200% auto;animation:shimmer 5s linear infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+nav{position:sticky;top:0;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:0 40px;height:68px;background:rgba(10,14,24,.93);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-logo{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:#60a5fa;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+.nav-right{display:flex;gap:10px;align-items:center}
+.btn-primary{background:#60a5fa;color:#0a0e18;padding:10px 22px;border-radius:50px;font-weight:700;font-size:13px;transition:transform .2s,box-shadow .2s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(96,165,250,.5)}
+.btn-outline{border:1.5px solid rgba(255,255,255,.2);color:#eef6ff;padding:9px 20px;border-radius:50px;font-weight:600;font-size:13px;transition:border-color .2s}
+.btn-outline:hover{border-color:#60a5fa;color:#60a5fa}
+.hero{position:relative;min-height:96vh;display:grid;grid-template-columns:60fr 40fr;align-items:center;padding:120px clamp(24px,6vw,80px) 100px;overflow:hidden;background:linear-gradient(-45deg,#0a0e18,#111d2e,#18243888,#60a5fa12,#0a0e18,#111d2e88);background-size:500% 500%;animation:gradBG 20s ease infinite;gap:48px}
+.hs{position:absolute;border-radius:50%;animation:blobMorph 12s ease-in-out infinite}
+.hs.s1{width:540px;height:540px;background:#60a5fa;opacity:.11;top:-180px;right:-140px}
+.hs.s2{width:300px;height:300px;background:#60a5fa;opacity:.07;bottom:-80px;left:60%;animation-delay:-5s}
+.hero-left{position:relative;z-index:1}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(12px);padding:9px 24px;border-radius:50px;font-size:13px;font-weight:500;margin-bottom:36px}
+.hero-h1{font-family:'Syne',sans-serif;font-size:clamp(36px,6.5vw,72px);font-weight:800;line-height:1.04;margin-bottom:24px;letter-spacing:-.02em}
+.hero-sub{font-size:clamp(15px,1.8vw,18px);opacity:.6;max-width:520px;margin:0 0 48px;line-height:1.75}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-btn-p{background:#60a5fa;color:#0a0e18;padding:17px 44px;border-radius:50px;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;display:inline-block;animation:ctaPulse 3s ease-out infinite;transition:transform .2s}
+.hero-btn-p:hover{transform:translateY(-3px)}
+.hero-btn-s{border:1.5px solid rgba(255,255,255,.28);color:#eef6ff;padding:16px 38px;border-radius:50px;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;backdrop-filter:blur(8px);transition:all .2s;display:inline-block}
+.hero-btn-s:hover{border-color:#60a5fa;color:#60a5fa}
+.hero-right{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.chip{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px 20px;text-align:center;backdrop-filter:blur(12px);transition:border-color .2s,transform .2s}
+.chip:hover{border-color:rgba(96,165,250,.4);transform:translateY(-3px)}
+.chip-num{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:#60a5fa;line-height:1;margin-bottom:6px}
+.chip-lbl{font-size:11px;font-weight:600;opacity:.55;letter-spacing:.06em;text-transform:uppercase}
+.tbar{background:#111d2e;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:20px 0;overflow:hidden}
+.ttrack{display:flex;width:max-content;animation:ticker 24s linear infinite}
+.titem{display:flex;align-items:center;gap:10px;padding:0 40px;border-right:1px solid rgba(255,255,255,.08);white-space:nowrap;flex-shrink:0}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#60a5fa;margin-bottom:14px;display:block}
+.section-h2{font-family:'Syne',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;margin-bottom:20px;color:#eef6ff}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.scard{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:34px 28px;backdrop-filter:blur(10px);transition:transform .28s,box-shadow .28s,border-color .28s}
+.scard:hover{transform:translateY(-8px);box-shadow:0 28px 64px rgba(0,0,0,.45);border-color:rgba(96,165,250,.35)}
+.scard-icon{font-size:34px;margin-bottom:18px;animation:floatY 4s ease-in-out infinite}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.why-card{display:flex;align-items:flex-start;gap:18px;padding:26px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px;transition:border-color .2s,transform .2s}
+.why-card:hover{border-color:rgba(96,165,250,.4);transform:translateY(-3px)}
+.why-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;text-align:center}
+.step{padding:28px 16px}
+.step-num{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#0a0e18;margin:0 auto 16px}
+.bform{background:#111d2e;border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:48px;max-width:700px;margin:0 auto;text-align:left}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fg{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#60a5fa;opacity:.85}
+input,select,textarea{padding:13px 18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;font-size:14px;font-family:'Inter',sans-serif;color:#eef6ff;outline:none;width:100%;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{border-color:#60a5fa}
+select option{background:#0a0e18}
+.subtn{width:100%;background:#60a5fa;color:#0a0e18;border:none;padding:17px;border-radius:50px;font-family:'Syne',sans-serif;font-size:16px;font-weight:800;cursor:pointer;margin-top:8px;transition:transform .2s,box-shadow .2s}
+.subtn:hover{transform:translateY(-2px);box-shadow:0 14px 44px rgba(96,165,250,.45)}
+.cmsg{margin-top:14px;font-size:12px;opacity:.45;text-align:center}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+.faq-q{width:100%;background:none;border:none;color:#eef6ff;font-size:15px;font-weight:600;padding:20px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:'Inter',sans-serif;text-align:left}
+.faq-icon{font-size:22px;flex-shrink:0;transition:transform .28s;font-weight:300}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{font-size:14px;opacity:.65;line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease}
+.faq-item.open .faq-a{max-height:220px;padding:0 0 20px}
+.csec{text-align:center;padding:100px 24px;background:#182438}
+.big-phone{font-family:'Syne',sans-serif;font-size:clamp(28px,6vw,62px);font-weight:800;color:#60a5fa;display:block;margin:20px 0 12px;transition:opacity .2s}
+.big-phone:hover{opacity:.8}
+footer{background:#030305;color:rgba(255,255,255,.25);text-align:center;padding:28px 24px;font-size:12px}
+.mob-cta{display:none;position:fixed;bottom:0;left:0;right:0;padding:17px 20px;background:linear-gradient(90deg,#60a5fa,#60a5fadd);z-index:9999;text-align:center;font-family:'Syne',sans-serif;font-weight:800;font-size:15px;color:#0a0e18}
+@media(max-width:768px){
+  nav{padding:0 20px}.btn-primary{display:none}
+  .hero{grid-template-columns:1fr;padding:100px 20px 60px;gap:40px}
+  .hero-right{grid-template-columns:1fr 1fr}
+  .sgrid{grid-template-columns:1fr}.steps{grid-template-columns:1fr;gap:24px}
+  .why-grid{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}.bform{padding:28px 20px}
+  .mob-cta{display:block}body{padding-bottom:64px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">Home Therapist Cooling, Heating, and Plumbing</div>
+  <div class="nav-right">
+    <a href="#booking" class="btn-primary">Book Now</a>
+    <a href="tel:8133432212" class="btn-outline">&#128222; (813) 343-2212</a>
+  </div>
+</nav>
+<div class="hero">
+  <div class="hs s1"></div>
+  <div class="hs s2"></div>
+  <div class="hero-left">
+    <div class="pill">&#11088; 4.8/5 &nbsp;&#183;&nbsp; 858 Google Reviews &nbsp;&#183;&nbsp; Tampa</div>
+    <h1 class="hero-h1"><span class="grad-text">Tampa Home Services</span></h1>
+    <p class="hero-sub">Local, licensed, and ready when you call. Honest pricing backed by a workmanship guarantee.</p>
+    <div class="hero-btns">
+      <a href="#booking" class="hero-btn-p">&#128197; Book Appointment</a>
+      <a href="tel:8133432212" class="hero-btn-s">&#128222; (813) 343-2212</a>
+    </div>
+  </div>
+  <div class="hero-right"><div class="chip animate"><div class="chip-num" data-target="858">858</div><div class="chip-lbl">Google Reviews</div></div><div class="chip animate" style="animation-delay:.1s"><div class="chip-num">4.8</div><div class="chip-lbl">Star Rating</div></div><div class="chip animate" style="animation-delay:.2s"><div class="chip-num">&#10003;</div><div class="chip-lbl">Licensed & Insured</div></div><div class="chip animate" style="animation-delay:.3s"><div class="chip-num">&#128205;</div><div class="chip-lbl">Serving Tampa</div></div></div>
+</div>
+<div class="tbar"><div class="ttrack"><div class="titem"><span style="font-size:22px">🛡️</span><span style="font-size:12px;font-weight:600;opacity:.7;margin-left:8px">Licensed &amp; Insured</span></div><div class="titem"><span style="font-size:22px">⏰</span><span style="font-size:12px;font-weight:600;opacity:.7;margin-left:8px">On-Time Guarantee</span></div><div class="titem"><span style="font-size:22px">⚡</span><span style="font-size:12px;font-weight:600;opacity:.7;margin-left:8px">Same-Day Available</span></div><div class="titem"><span style="font-size:22px">📍</span><span style="font-size:12px;font-weight:600;opacity:.7;margin-left:8px">Serving Tampa</span></div><div class="titem"><span style="font-size:22px">🛡️</span><span style="font-size:12px;font-weight:600;opacity:.7;margin-left:8px">Licensed &amp; Insured</span></div><div class="titem"><span style="font-size:22px">⏰</span><span style="font-size:12px;font-weight:600;opacity:.7;margin-left:8px">On-Time Guarantee</span></div><div class="titem"><span style="font-size:22px">⚡</span><span style="font-size:12px;font-weight:600;opacity:.7;margin-left:8px">Same-Day Available</span></div><div class="titem"><span style="font-size:22px">📍</span><span style="font-size:12px;font-weight:600;opacity:.7;margin-left:8px">Serving Tampa</span></div><div class="titem"><span style="font-size:22px">🛡️</span><span style="font-size:12px;font-weight:600;opacity:.7;margin-left:8px">Licensed &amp; Insured</span></div><div class="titem"><span style="font-size:22px">⏰</span><span style="font-size:12px;font-weight:600;opacity:.7;margin-left:8px">On-Time Guarantee</span></div><div class="titem"><span style="font-size:22px">⚡</span><span style="font-size:12px;font-weight:600;opacity:.7;margin-left:8px">Same-Day Available</span></div><div class="titem"><span style="font-size:22px">📍</span><span style="font-size:12px;font-weight:600;opacity:.7;margin-left:8px">Serving Tampa</span></div><div class="titem"><span style="font-size:22px">🛡️</span><span style="font-size:12px;font-weight:600;opacity:.7;margin-left:8px">Licensed &amp; Insured</span></div><div class="titem"><span style="font-size:22px">⏰</span><span style="font-size:12px;font-weight:600;opacity:.7;margin-left:8px">On-Time Guarantee</span></div><div class="titem"><span style="font-size:22px">⚡</span><span style="font-size:12px;font-weight:600;opacity:.7;margin-left:8px">Same-Day Available</span></div><div class="titem"><span style="font-size:22px">📍</span><span style="font-size:12px;font-weight:600;opacity:.7;margin-left:8px">Serving Tampa</span></div></div></div>
+<div id="services" style="padding:100px 24px">
+  <div style="max-width:1000px;margin:0 auto">
+    <span class="eyebrow animate">What We Do</span>
+    <h2 class="section-h2 animate">Our Services</h2>
+    <div class="sgrid"><div class="scard animate" style="animation-delay:0.00s"><div class="scard-icon">❄️</div><h3 style="font-family:'Syne',sans-serif;font-size:17px;font-weight:800;margin:0 0 10px;color:#eef6ff">AC Installation</h3><p style="font-size:13px;line-height:1.75;opacity:.65;margin:0 0 20px">Fast air conditioning diagnostics and repair to keep your Tampa home comfortable.</p><a href="#booking" style="font-size:12px;font-weight:700;color:#60a5fa;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid #60a5fa;padding-bottom:2px">Book This &#8594;</a></div><div class="scard animate" style="animation-delay:0.08s"><div class="scard-icon">🔥</div><h3 style="font-family:'Syne',sans-serif;font-size:17px;font-weight:800;margin:0 0 10px;color:#eef6ff">Heating System Repair</h3><p style="font-size:13px;line-height:1.75;opacity:.65;margin:0 0 20px">Furnace, heat pump, and boiler repairs by licensed technicians in Tampa.</p><a href="#booking" style="font-size:12px;font-weight:700;color:#60a5fa;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid #60a5fa;padding-bottom:2px">Book This &#8594;</a></div><div class="scard animate" style="animation-delay:0.16s"><div class="scard-icon">🔧</div><h3 style="font-family:'Syne',sans-serif;font-size:17px;font-weight:800;margin:0 0 10px;color:#eef6ff">Plumbing Leak Fix</h3><p style="font-size:13px;line-height:1.75;opacity:.65;margin:0 0 20px">Seasonal system maintenance that extends equipment life and cuts energy bills.</p><a href="#booking" style="font-size:12px;font-weight:700;color:#60a5fa;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid #60a5fa;padding-bottom:2px">Book This &#8594;</a></div><div class="scard animate" style="animation-delay:0.24s"><div class="scard-icon">⚡</div><h3 style="font-family:'Syne',sans-serif;font-size:17px;font-weight:800;margin:0 0 10px;color:#eef6ff">Furnace Maintenance</h3><p style="font-size:13px;line-height:1.75;opacity:.65;margin:0 0 20px">Same-day emergency calls in Tampa. We pick up and we show up.</p><a href="#booking" style="font-size:12px;font-weight:700;color:#60a5fa;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid #60a5fa;padding-bottom:2px">Book This &#8594;</a></div><div class="scard animate" style="animation-delay:0.32s"><div class="scard-icon">🏠</div><h3 style="font-family:'Syne',sans-serif;font-size:17px;font-weight:800;margin:0 0 10px;color:#eef6ff">Drain Cleaning</h3><p style="font-size:13px;line-height:1.75;opacity:.65;margin:0 0 20px">New equipment installs with proper permits, licensed labor, and full warranty.</p><a href="#booking" style="font-size:12px;font-weight:700;color:#60a5fa;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid #60a5fa;padding-bottom:2px">Book This &#8594;</a></div><div class="scard animate" style="animation-delay:0.40s"><div class="scard-icon">💨</div><h3 style="font-family:'Syne',sans-serif;font-size:17px;font-weight:800;margin:0 0 10px;color:#eef6ff">Water Heater Installation</h3><p style="font-size:13px;line-height:1.75;opacity:.65;margin:0 0 20px">Filtration upgrades, UV systems, and air quality testing for healthier living.</p><a href="#booking" style="font-size:12px;font-weight:700;color:#60a5fa;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid #60a5fa;padding-bottom:2px">Book This &#8594;</a></div></div>
+  </div>
+</div>
+<div style="background:#111d2e;padding:100px 24px" id="why">
+  <div style="max-width:1000px;margin:0 auto">
+    <span class="eyebrow animate">Why Choose Us</span>
+    <h2 class="section-h2 animate">What Sets Us Apart</h2>
+    <div class="why-grid"><div class="why-card animate" style="animation-delay:0.00s"><div class="why-icon" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)">⏰</div><div><h4 style="font-size:16px;font-weight:700;margin:0 0 6px;color:#eef6ff">On-Time Promise</h4><p style="font-size:13px;opacity:.6;margin:0;line-height:1.65">We give you a window and we show up in it — or we make it right.</p></div></div><div class="why-card animate" style="animation-delay:0.10s"><div class="why-icon" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)">💰</div><div><h4 style="font-size:16px;font-weight:700;margin:0 0 6px;color:#eef6ff">Flat-Rate Pricing</h4><p style="font-size:13px;opacity:.6;margin:0;line-height:1.65">No hourly surprises. Upfront quotes before any work begins.</p></div></div><div class="why-card animate" style="animation-delay:0.20s"><div class="why-icon" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)">🛡️</div><div><h4 style="font-size:16px;font-weight:700;margin:0 0 6px;color:#eef6ff">Licensed &amp; Insured</h4><p style="font-size:13px;opacity:.6;margin:0;line-height:1.65">Fully licensed, bonded, and insured for work in Tampa.</p></div></div><div class="why-card animate" style="animation-delay:0.30s"><div class="why-icon" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)">✅</div><div><h4 style="font-size:16px;font-weight:700;margin:0 0 6px;color:#eef6ff">Satisfaction Guarantee</h4><p style="font-size:13px;opacity:.6;margin:0;line-height:1.65">If it's not right, we come back and fix it — no charge.</p></div></div></div>
+  </div>
+</div>
+<div style="background:#182438;padding:100px 24px;text-align:center" id="process">
+  <div style="max-width:1000px;margin:0 auto">
+    <span class="eyebrow animate">The Process</span>
+    <h2 class="section-h2 animate">How It Works</h2>
+    <div class="steps"><div class="step animate" style="animation-delay:0.00s"><div class="step-num" style="background:linear-gradient(135deg,#60a5fa,#60a5fa99)">1</div><h3 style="font-size:17px;font-weight:700;margin:16px 0 8px;color:#eef6ff">Schedule Service</h3><p style="font-size:13px;opacity:.6;line-height:1.65">Call or book online. We confirm your appointment window and what to expect.</p></div><div class="step animate" style="animation-delay:0.12s"><div class="step-num" style="background:linear-gradient(135deg,#60a5fa,#60a5fa99)">2</div><h3 style="font-size:17px;font-weight:700;margin:16px 0 8px;color:#eef6ff">Tech Arrives On Time</h3><p style="font-size:13px;opacity:.6;line-height:1.65">Licensed technician arrives at your Tampa home as scheduled — no all-day wait.</p></div><div class="step animate" style="animation-delay:0.24s"><div class="step-num" style="background:linear-gradient(135deg,#60a5fa,#60a5fa99)">3</div><h3 style="font-size:17px;font-weight:700;margin:16px 0 8px;color:#eef6ff">Work Done Right</h3><p style="font-size:13px;opacity:.6;line-height:1.65">Professional repair or install backed by our workmanship guarantee.</p></div></div>
+  </div>
+</div>
+<section style="background:#0a0e18;padding:100px 24px" id="reviews">
+    <div style="max-width:1000px;margin:0 auto">
+      <p class="eyebrow animate" style="color:#60a5fa">What Customers Say</p>
+      <h2 class="section-h2 animate">Google Reviews</h2>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;flex-wrap:wrap" class="animate">
+        <span style="color:#60a5fa;font-size:22px;letter-spacing:2px">★★★★★</span> <span style="font-size:18px;font-weight:700">4.8/5</span>
+        <span style="opacity:.5">·</span>
+        <span style="opacity:.6">858 reviews</span>
+        <a href="https://www.google.com/search?q=Home+Therapist+Cooling,+Heating,+and+Plumbing" target="_blank" style="color:#60a5fa;font-size:13px;border:1px solid #60a5fa;padding:4px 14px;border-radius:20px;margin-left:auto">See on Google ↗</a>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:48px" class="animate"><span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 12px;border-radius:20px;font-size:12px">punctual</span> · <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 12px;border-radius:20px;font-size:12px">professional work</span> · <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 12px;border-radius:20px;font-size:12px">fair pricing</span> · <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 12px;border-radius:20px;font-size:12px">clean and tidy</span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px"><div class="rcard animate" style="background:#111d2e;border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:28px 24px">
+          <div style="margin-bottom:12px"><span style="color:#60a5fa;font-size:22px;letter-spacing:2px">★★★★★</span></div>
+          <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.72);margin-bottom:18px">"Used these guys before. The good new is, the Daikin equipment is great. Super quiet, efficient, intelligent. THE INSTALLATION WAS REALLY BAD! Owner: Installation should last 6 hours. My wife has Parkinsons and was recovering from a heart p..."</p>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#60a5fa;opacity:.7">VIA GOOGLE REVIEWS</div>
+        </div><div class="rcard animate" style="background:#111d2e;border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:28px 24px">
+          <div style="margin-bottom:12px"><span style="color:#60a5fa;font-size:22px;letter-spacing:2px">★★★★★</span></div>
+          <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.72);margin-bottom:18px">"I had a great experience with Alejandro from Home Therapist Cooling, Heating, and Plumbing. He repaired two toilets and installed the water line to my new refrigerator after the delivery team refused to connect it due to the existing plasti..."</p>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#60a5fa;opacity:.7">VIA GOOGLE REVIEWS</div>
+        </div><div class="rcard animate" style="background:#111d2e;border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:28px 24px">
+          <div style="margin-bottom:12px"><span style="color:#60a5fa;font-size:22px;letter-spacing:2px">★★★★★</span></div>
+          <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.72);margin-bottom:18px">"As an engineer/fabricator/assembler, I have high standards from my contractors. This guy Sam, he fulfilled all my requests and installation needs. He took pride of his work, and left me with a smile. Price was fair and the time for  the ins..."</p>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#60a5fa;opacity:.7">VIA GOOGLE REVIEWS</div>
+        </div></div>
+    </div>
+  </section>
+<div id="faq" style="padding:100px 24px;background:#111d2e">
+  <div style="max-width:720px;margin:0 auto">
+    <span class="eyebrow animate">FAQ</span>
+    <h2 class="section-h2 animate">Common Questions</h2>
+    <div class="faq-item animate" style="animation-delay:0.00s"><button class="faq-q" onclick="toggleFaq(this)"><span>How fast can you schedule service in Tampa?</span><span class="faq-icon" style="color:#60a5fa">+</span></button><div class="faq-a">For non-emergencies, we typically schedule within 24–48 hours. Emergency calls are handled same-day when available.</div></div><div class="faq-item animate" style="animation-delay:0.07s"><button class="faq-q" onclick="toggleFaq(this)"><span>Do you charge for estimates?</span><span class="faq-icon" style="color:#60a5fa">+</span></button><div class="faq-a">We provide free over-the-phone estimates and flat-rate quotes before starting any work. No surprises.</div></div><div class="faq-item animate" style="animation-delay:0.14s"><button class="faq-q" onclick="toggleFaq(this)"><span>What brands do you service?</span><span class="faq-icon" style="color:#60a5fa">+</span></button><div class="faq-a">We service all major brands. Our technicians are trained on the full range of equipment used in Tampa homes.</div></div><div class="faq-item animate" style="animation-delay:0.21s"><button class="faq-q" onclick="toggleFaq(this)"><span>Are you licensed and insured?</span><span class="faq-icon" style="color:#60a5fa">+</span></button><div class="faq-a">Yes — fully licensed, bonded, and insured. We're compliant with all local codes and permitting requirements in Tampa.</div></div><div class="faq-item animate" style="animation-delay:0.28s"><button class="faq-q" onclick="toggleFaq(this)"><span>What if the problem comes back?</span><span class="faq-icon" style="color:#60a5fa">+</span></button><div class="faq-a">All our work includes a workmanship guarantee. If the issue returns due to our repair, we come back at no additional charge.</div></div>
+  </div>
+</div>
+<div id="booking" style="padding:100px 24px">
+  <div style="max-width:800px;margin:0 auto;text-align:center">
+    <span class="eyebrow animate">Get Started</span>
+    <h2 class="section-h2 animate">Book Your Appointment</h2>
+    <p class="animate" style="font-size:16px;opacity:.6;margin:0 auto 48px;max-width:520px;line-height:1.7">Fill out the form and we will confirm within 2 hours. Rather call now? (813) 343-2212</p>
+    <div class="bform animate">
+      <div class="frow">
+        <div class="fg"><label>Your Name</label><input type="text" id="fn" placeholder="John Smith" required></div>
+        <div class="fg"><label>Your Phone</label><input type="tel" id="fp" placeholder="(555) 000-0000" required></div>
+      </div>
+      <div class="fg"><label>Your Email</label><input type="email" id="fe" placeholder="you@email.com"></div>
+      <div class="fg"><label>Service Needed</label><select id="fs"><option value="">Select a service...</option><option>AC Installation</option><option>Heating System Repair</option><option>Plumbing Leak Fix</option><option>Furnace Maintenance</option><option>Drain Cleaning</option><option>Water Heater Installation</option><option>Not sure - need consultation</option></select></div>
+      <div class="frow">
+        <div class="fg"><label>Preferred Date</label><input type="date" id="fd"></div>
+        <div class="fg"><label>Preferred Time</label><input type="time" id="ft"></div>
+      </div>
+      <div class="fg"><label>Notes</label><textarea id="fn2" rows="3" placeholder="Location, details, or anything else..."></textarea></div>
+      <button class="subtn" onclick="submitForm()">Request Appointment &#8594;</button>
+      <p class="cmsg">&#10003; Confirmation within 2 hours &nbsp;&#183;&nbsp; No payment required</p>
+    </div>
+  </div>
+</div>
+<div class="csec" id="contact">
+  <span class="eyebrow" style="color:#60a5fa">Reach Us</span>
+  <h2 class="section-h2">Call or Text Anytime</h2>
+  <a href="tel:8133432212" class="big-phone">(813) 343-2212</a>
+  
+  <p style="opacity:.4;margin-top:16px;font-size:14px">Serving Tampa &middot; St. Petersburg &middot; Clearwater &middot; Brandon &middot; Wesley Chapel</p>
+</div>
+<footer>&copy; 2026 Home Therapist Cooling, Heating, and Plumbing &nbsp;&#183;&nbsp; Tampa &nbsp;&#183;&nbsp; <a href="tel:8133432212" style="color:#60a5fa">(813) 343-2212</a><br><span style="opacity:.5">Sample website preview prepared for Home Therapist Cooling, Heating, and Plumbing by GDI Web Solutions &nbsp;&#183;&nbsp; tampahometherapist.com</span></footer>
+<a href="tel:8133432212" class="mob-cta">&#128222; Call Now &mdash; (813) 343-2212</a>
+<script>
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.animate').forEach(el=>obs.observe(el));
+function countUp(el){const target=parseInt(el.dataset.target);if(!target||target<2)return;const dur=1800,step=target/(dur/16);let cur=0;const t=setInterval(()=>{cur=Math.min(cur+step,target);el.textContent=Math.round(cur).toLocaleString();if(cur>=target)clearInterval(t);},16);}
+document.querySelectorAll('[data-target]').forEach(el=>{const io=new IntersectionObserver(entries=>{if(entries[0].isIntersecting){countUp(el);io.disconnect();}});io.observe(el);});
+function toggleFaq(btn){const item=btn.parentElement;const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open');}
+function submitForm(){var nm=document.getElementById('fn').value,ph=document.getElementById('fp').value,em=document.getElementById('fe').value,svc=document.getElementById('fs').value,dt=document.getElementById('fd').value,tm=document.getElementById('ft').value,nt=document.getElementById('fn2').value;if(!nm||!ph||!svc){alert('Please fill in your name, phone, and service needed.');return;}var body='New Booking%0AName: '+encodeURIComponent(nm)+'%0APhone: '+encodeURIComponent(ph)+'%0AService: '+encodeURIComponent(svc)+'%0ADate: '+encodeURIComponent(dt)+'%0ATime: '+encodeURIComponent(tm)+'%0ANotes: '+encodeURIComponent(nt);window.location.href='tel:8133432212';document.querySelector('.bform').innerHTML='<div style="text-align:center;padding:60px 20px"><div style="font-size:60px;margin-bottom:20px">&#10003;</div><h3 style="font-size:22px;margin-bottom:12px">Request Sent!</h3><p style="opacity:.6">We will confirm within 2 hours. Call (813) 343-2212 for anything urgent.</p></div>';}
+</script>
+</body></html>
